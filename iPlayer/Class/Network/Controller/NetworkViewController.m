@@ -141,11 +141,11 @@
 
 - (void)video_play:(NSString*)filename
 {
-    NSURL*videoPathURL=[NSURL URLWithString:filename];//urlStr是视频播放地址
+    NSURL*videoPathURL=[NSURL URLWithString:filename];//videoPathURL是视频播放地址
     MPMoviePlayerViewController*playViewController=[[MPMoviePlayerViewController alloc] initWithContentURL:videoPathURL];
     MPMoviePlayerController*player=[playViewController moviePlayer];
-    player.scalingMode=MPMovieScalingModeFill;
-    player.controlStyle=MPMovieControlStyleFullscreen;
+    player.scalingMode=MPMovieScalingModeAspectFit;
+    player.controlStyle=MPMovieControlStyleNone;
     [player play];
     [self.navigationController presentViewController:playViewController animated:YES completion:nil];
 }
